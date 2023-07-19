@@ -1,17 +1,17 @@
 
-def checkIncognito(valor):
-    try:
-        float(valor)
-        return False
-    except:
-        return True
-
 oppositeOperators = {
     '+': '-',
     '-': '+',
     '*': '/',
     '/': '*'
 }
+
+def checkIncognito(valor):
+    try:
+        float(valor)
+        return False
+    except:
+        return True
 
 def solverEquation(equation):
 
@@ -50,3 +50,6 @@ def solverEquation(equation):
         return A / B 
     else: 
         return A * B
+
+def inicialBut():
+    pass
