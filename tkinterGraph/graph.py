@@ -21,7 +21,8 @@ root.state('iconic')    # método: iniciar a abertura com a dimensão mínima. P
 root.iconbitmap('tkinterGraph\images\icon-math.ico')     # método: inserir ícone na janela (tipo de aquivo: .ico)
 
 # criação de um button
-inicialLabel = Label(root,
+inicialLabel = Label(
+    root,
     text= 'Solver Equation.\nEnter a equation.', #texto 
     font= 'Calibri 16 bold',    # estilo, tamanho e característica da fonte
     fg= 'white',    # cor da fonte
@@ -34,7 +35,8 @@ inicialLabel = Label(root,
 ).pack()
 
 # criação do label ---> espaço para colocar um texto
-label1 = Label(root, 
+label1 = Label(
+    root, 
     text = '=', 
     font = 'Calibri 14 bold',  
     fg = 'black', 
