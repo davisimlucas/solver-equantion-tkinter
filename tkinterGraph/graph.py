@@ -20,25 +20,26 @@ root.maxsize(width = 700, height = 700)     # método: definir dimensão máxima
 root.state('iconic')    # método: iniciar a abertura com a dimensão mínima. Para a dimensão máx ('zoomed')
 root.iconbitmap('tkinterGraph\images\icon-math.ico')     # método: inserir ícone na janela (tipo de aquivo: .ico)
 
+# criação de um button
+inicialLabel = Label(root,
+    text= 'Solver Equation.\nEnter a equation.', #texto 
+    font= 'Calibri 16 bold',    # estilo, tamanho e característica da fonte
+    fg= 'white',    # cor da fonte
+    bg= 'blue',     # cor back graund
+    width= 20,  # comprimento do Label
+    bd= 3,  # tamanho da borda 
+    relief= 'solid' # estilo da borda
+).pack()
 
 # criação do label ---> espaço para colocar um texto
 label1 = Label(root, 
-                text = '=', #texto 
-                bg = 'grey',  #cor back graund
-                fg = 'black',   # cor da fonte
-                font = 'Times')     # estilo da fonte
+    text = '=', #texto 
+    font = 'Calibri 14 bold',  # estilo, tamanho e característica da fonte
+    fg = 'black',   # cor da fonte
+    bg = 'grey',  # cor back graund
+    bd= 3,
+    relief= 'flat'
+).pack()    
 
-label2 = Label(root, text = 'Label 2')
-
-# criação de um button
-inicialButton = Button(root,
-                        text= 'Início',
-                        font= 'Times',
-                        bg= 'Blue',
-                        )
-
-# pack
-inicialButton.pack()
-label1.pack()
 
 root.mainloop()     # método de looping: abrir interface
