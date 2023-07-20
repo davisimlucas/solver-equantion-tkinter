@@ -25,18 +25,21 @@ inicialLabel = Label(root,
     text= 'Solver Equation.\nEnter a equation.', #texto 
     font= 'Calibri 16 bold',    # estilo, tamanho e característica da fonte
     fg= 'white',    # cor da fonte
+    anchor= CENTER,  # alinhamento do texto (de acordo com uma bússola)
     bg= 'blue',     # cor back graund
-    width= 20,  # comprimento do Label
+    width= 60,  # comprimento do Label
+    height= 2,  # altura do Label
     bd= 3,  # tamanho da borda 
     relief= 'solid' # estilo da borda
 ).pack()
 
 # criação do label ---> espaço para colocar um texto
 label1 = Label(root, 
-    text = '=', #texto 
-    font = 'Calibri 14 bold',  # estilo, tamanho e característica da fonte
-    fg = 'black',   # cor da fonte
-    bg = 'grey',  # cor back graund
+    text = '=', 
+    font = 'Calibri 14 bold',  
+    fg = 'black', 
+    anchor= CENTER, 
+    bg = 'grey', 
     bd= 3,
     relief= 'flat'
 ).pack()    
