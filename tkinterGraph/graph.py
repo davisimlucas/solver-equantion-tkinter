@@ -23,7 +23,7 @@ root.iconbitmap('tkinterGraph\images\icon-math.ico')     # método: inserir íco
 # criação de um button
 inicialLabel = Label(
     root,
-    text= 'Solver Equation.\nEnter a equation.', #texto 
+    text= 'Solver Equation\nEnter a equation', #texto 
     font= 'Calibri 16 bold',    # estilo, tamanho e característica da fonte
     fg= 'white',    # cor da fonte
     anchor= CENTER,  # alinhamento do texto (de acordo com uma bússola)
@@ -35,13 +35,13 @@ inicialLabel = Label(
 ).pack()
 
 # criação do label ---> espaço para colocar um texto
-label1 = Label(
+equalsLabel = Label(
     root, 
-    text = '=', 
-    font = 'Calibri 14 bold',  
-    fg = 'black', 
+    text= '=', 
+    font= 'Calibri 14 bold',  
+    fg= 'black', 
     anchor= CENTER, 
-    bg = 'grey', 
+    bg= 'grey', 
     bd= 3,
     relief= 'flat'
 ).pack()    
