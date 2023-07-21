@@ -33,7 +33,6 @@ inicialLabel = Label(
     bd= 3,  # tamanho da borda 
     relief= 'solid' # estilo da borda
 ).pack()
-
 # criação do label ---> espaço para colocar um texto
 equalsLabel = Label(
     root, 
@@ -43,8 +42,7 @@ equalsLabel = Label(
     anchor= CENTER, 
     bg= 'grey', 
     bd= 3,
-    relief= 'flat'
-).pack()    
-
+    relief= 'flat')
+equalsLabel.pack()    
 
 root.mainloop()     # método de looping: abrir interface
