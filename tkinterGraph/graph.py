@@ -47,7 +47,5 @@ equalsLabel = Label(
     relief= 'flat')
 inicialLabel.grid(row= 0, column=6)
 equalsLabel.grid(row= 1, column=1)
-numRow, numCol = root.grid_size()
-print(f'{numRow}, {numCol}')
 
 root.mainloop()     # método de looping: abrir interface
