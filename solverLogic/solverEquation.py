@@ -14,8 +14,8 @@ def checkIncognito(valor):
         return True
 
 def solverEquation(equation):
-
-    parts = equation.split('=')
+    
+    parts = [item.equation.split('=') for item in equation]
     expression = equation[1]
     validOperators = ['+', '-', '*', '/']
 
@@ -41,7 +41,7 @@ def solverEquation(equation):
         elif op == '+' or op == '*':
             A = float(leftValue)
             B = float(values[0])
-            
+
     if op == '+':
         result = A - B 
         return result
@@ -54,3 +54,9 @@ def solverEquation(equation):
     else: 
         result = A * B
         return result
+
+    resultText.set(result)
+    print(result)
+
+expression = ['12', '=', 'x', '+', '6']
+solverEquation(expression)
