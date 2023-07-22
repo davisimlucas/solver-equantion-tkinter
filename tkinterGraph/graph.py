@@ -79,8 +79,8 @@ resultLabel = Label(
 )
 
 inicialLabel.grid(row= 0, column= 0)
-entryEquation.grid(row= 1, pady=10, column=1)
-executeButton.grid(row=2, column= 0)
-resultLabel.grid(row= 3, pady= 10, column=1)
+entryEquation.grid(row= 1, pady=10, column=0)
+executeButton.grid(row=2, pady= 10, column= 0)
+resultLabel.grid(row= 3, pady= 10, column=0)
 
 root.mainloop()
