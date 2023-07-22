@@ -33,13 +33,13 @@ def showResult():
 
 inicialLabel = Label(
     root,
-    text= 'Solver Equation\nEnter a equation',
+    text= 'Solver Equation\nEnter a equation\nLike --> X = A op B',
     font= ('Calibri', 16, 'bold'),    
     fg= 'white',    
     anchor= CENTER,  
     background= 'blue',    
     width= 15,  
-    height= 2,  
+    height= 3,  
     borderwidth= 3,   
     relief= 'solid') 
 
