@@ -20,32 +20,121 @@ root.maxsize(width = 700, height = 700)     # método: definir dimensão máxima
 root.state('iconic')    # método: iniciar a abertura com a dimensão mínima. Para a dimensão máx ('zoomed')
 root.iconbitmap('tkinterGraph\images\icon-math.ico')     # método: inserir ícone na janela (tipo de aquivo: .ico)
 
+leftValue = StringVar()
+ValueEquals = '='
+ValueA = StringVar()
+ValueB = StringVar()
+ValueOp = StringVar()
+
+result = StringVar()
+
+expressionList = [leftValue, ValueEquals, ValueA, ValueOp, ValueB]
+
 # criação de um Label de introdução
 inicialLabel = Label(
     root,
     text= 'Solver Equation\nEnter a equation', #texto 
-    font= 'Calibri 16 bold',    # estilo, tamanho e característica da fonte
+    font= ('Calibri', 16, 'bold'),    # estilo, tamanho e característica da fonte
     fg= 'white',    # cor da fonte
     anchor= CENTER,  # alinhamento do texto (de acordo com uma bússola)
-    bg= 'blue',     # cor back graund
+    background= 'blue',     # cor back graund
     width= 15,  # comprimento do Label
     height= 2,  # altura do Label
-    bd= 3,  # tamanho da borda 
-    relief= 'solid' # estilo da borda
-)
+    borderwidth= 3,  # tamanho da borda 
+    relief= 'solid')    # estilo da borda
+
+# criação dos entry 
+leftEntry = Entry(
+    root,
+    textvariable= leftValue,
+    font= ('Calibri', 14, 'bold'),
+    fg= 'black',
+    justify= CENTER,
+    width= 10,
+    background= 'grey',
+    borderwidth= 3,
+    relief= 'solid')
+
+entryA = Entry(
+    root,
+    textvariable= ValueA,
+    font= ('Calibri', 14, 'bold'),
+    fg= 'black',
+    justify= CENTER,
+    width= 10,
+    background= 'grey',
+    borderwidth= 2,
+    relief= 'solid')
+
+entryOp = Entry(
+    root,
+    textvariable= ValueOp,
+    font= ('Calibri', 14, 'bold'),
+    fg= 'black',
+    justify= CENTER,
+    width= 5,
+    background= 'grey',
+    borderwidth= 2,
+    relief= 'solid')
+
+entryB = Entry(
+    root,
+    textvariable= ValueB,
+    font= ('Calibri', 14, 'bold'),
+    fg= 'black',
+    justify= CENTER,
+    width= 10,
+    background= 'grey',
+    borderwidth= 2,
+    relief= 'solid')
+
 # criação do label do "=" ---> espaço para colocar um texto fixo
 equalsLabel = Label(
     root, 
-    text= '=', 
-    font= 'Calibri 14 bold',  
-    fg= 'black', 
+    text= ValueEquals, 
+    font= ('Calibri', 14, 'bold'),  
+    foreground= 'black', 
     anchor= CENTER, 
-    width=10,
+    width=5,
     height=2,
-    bg= 'grey', 
-    bd= 3,
-    relief= 'flat')
-inicialLabel.grid(row= 0, column=6)
+    background= 'grey', 
+    borderwidth= 3,
+    relief= 'flat'
+)
+
+# criação do botão de executar 
+executeButton= Button(
+    root,
+    text= 'Solver Execute\nClick here!',
+    background= 'blue',
+    font= ('Calibri', 14, 'bold'),
+    foreground= 'white',
+    width= 15,
+    height= 2,
+    borderwidth= 2,
+    relief= 'solid'
+)
+
+
+incognitoLabel = Label(
+    root,
+    text= 'X =',
+    background= 'grey',
+    font= ('Calibri', 14, 'bold'),
+    foreground= 'black',
+    anchor= CENTER,
+    width=5,
+    borderwidth= 2,
+    relief= 'solid'
+)
+
+inicialLabel.grid(row= 0, column= 0)
+leftEntry.grid(row= 1, pady=10, column=0, columnspan= 2)
 equalsLabel.grid(row= 1, column=1)
+entryA.grid(row= 1, pady=10, column=2)
+entryOp.grid(row=1, pady=10, column= 3)
+entryB.grid(row= 1, pady=10, column= 4)
+executeButton.grid(row=2, column= 0)
+incognitoLabel.grid(row= 3, column= 0, pady= 10)
 
 root.mainloop()     # método de looping: abrir interface
