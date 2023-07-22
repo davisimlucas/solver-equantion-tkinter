@@ -10,18 +10,16 @@ from solverLogic.solverEquation import*
 
 root = Tk()
 root.title('SOLVER EQUATION')   
-root['bg'] = 'grey'    
+root['bg'] = '#08298A'    
 
-width = 600
-height = 400
+width = 338
+height = 320
 widthScreem = root.winfo_screenwidth()
 heightScreem = root.winfo_screenheight()
 posx = widthScreem / 2 - width / 2
 posy = heightScreem / 2 - height / 2
 root.geometry('%dx%d+%d+%d' % (width, height, posx, posy))    
-root.resizable(False, False)      
-root.minsize(width = 600, height = 400)     
-root.maxsize(width = 700, height = 700)   
+root.resizable(TRUE, TRUE)      
 root.state('iconic')   
 root.iconbitmap('tkinterGraph\images\icon-math.ico')    
 
@@ -29,19 +27,31 @@ equationString = StringVar()
 
 def showResult():
     resultString = solverEquation(equationString.get())
-    resultLabel['text'] = f'X = {resultString}' 
+    resultLabel['text'] = f'X = {resultString:.2f}' 
 
 inicialLabel = Label(
     root,
-    text= 'Solver Equation\nEnter a equation\nLike --> X = A op B',
+    text= 'Solver Equation',
     font= ('Calibri', 16, 'bold'),    
-    fg= 'white',    
+    foreground= '#D8D8D8',    
     anchor= CENTER,  
-    background= 'blue',    
-    width= 15,  
-    height= 3,  
+    background= '#08298A',    
+    width= 30,  
+    height= 2,  
     borderwidth= 3,   
-    relief= 'solid') 
+    relief= 'flat') 
+
+exempleLabel = Label(
+    root, 
+    text= 'Enter a equation\nExemple: X = A op B\nop: "+" or "-" or "*" or "/"',
+    font= ('Calibri', 12),
+    foreground= 'black',
+    justify= CENTER,
+    width= 30,
+    background= '#D8D8D8',
+    borderwidth= 2,
+    relief= 'solid',
+)
 
 entryEquation = Entry(
     root,
@@ -49,8 +59,8 @@ entryEquation = Entry(
     font= ('Calibri', 14, 'bold'),
     fg= 'black',
     justify= CENTER,
-    width= 10,
-    background= 'grey',
+    width= 30,
+    background= '#D8D8D8',
     borderwidth= 2,
     relief= 'solid')
 
@@ -58,9 +68,9 @@ executeButton= Button(
     root,
     text= 'Solver Execute\nClick here!',
     command= lambda: showResult(),
-    background= 'blue',
+    background= '#D8D8D8',
     font= ('Calibri', 14, 'bold'),
-    foreground= 'white',
+    foreground= 'black',
     width= 15,
     height= 2,
     borderwidth= 2,
@@ -69,18 +79,19 @@ executeButton= Button(
 
 resultLabel = Label(
     root,
-    background= 'blue',
+    background= '#D8D8D8',
     font= ('Calibri', 14, 'bold'),
-    foreground= 'white',
+    foreground= 'black',
     anchor= CENTER,
-    width= 10,
+    width= 15,
     borderwidth= 2,
-    relief= 'solid'
+    relief= 'flat'
 )
 
 inicialLabel.grid(row= 0, column= 0)
-entryEquation.grid(row= 1, pady=10, column=0)
-executeButton.grid(row=2, pady= 10, column= 0)
-resultLabel.grid(row= 3, pady= 10, column=0)
+exempleLabel.grid(row= 1, pady= 5, column=0)
+entryEquation.grid(row= 2, pady=10, column=0)
+executeButton.grid(row=3, pady= 10, column= 0)
+resultLabel.grid(row= 4, pady= 10, column=0)
 
 root.mainloop()
