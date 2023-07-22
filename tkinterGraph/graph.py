@@ -1,5 +1,12 @@
+import os
+import sys
 import tkinter as tk
 from tkinter import *
+
+my_project =  os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(my_project)
+
+from solverLogic.solverEquation import*
 
 root = Tk()
 root.title('SOLVER EQUATION')   # método: dar título à interface 
@@ -26,9 +33,9 @@ ValueA = StringVar()
 ValueB = StringVar()
 ValueOp = StringVar()
 
-result = StringVar()
+resultText = StringVar()
 
-expressionList = [leftValue, ValueEquals, ValueA, ValueOp, ValueB]
+expression = f"{leftValue} {ValueEquals} {ValueA} {ValueOp} {ValueB}"
 
 # criação de um Label de introdução
 inicialLabel = Label(
@@ -87,7 +94,6 @@ entryB = Entry(
     background= 'grey',
     borderwidth= 2,
     relief= 'solid')
-
 # criação do label do "=" ---> espaço para colocar um texto fixo
 equalsLabel = Label(
     root, 
@@ -101,11 +107,11 @@ equalsLabel = Label(
     borderwidth= 3,
     relief= 'flat'
 )
-
 # criação do botão de executar 
 executeButton= Button(
     root,
     text= 'Solver Execute\nClick here!',
+    command= solverEquation(equation=expressionList),
     background= 'blue',
     font= ('Calibri', 14, 'bold'),
     foreground= 'white',
@@ -114,7 +120,6 @@ executeButton= Button(
     borderwidth= 2,
     relief= 'solid'
 )
-
 
 incognitoLabel = Label(
     root,
@@ -128,6 +133,18 @@ incognitoLabel = Label(
     relief= 'solid'
 )
 
+resultLabel = Label(
+    root, 
+    textvariable= result,
+    background= 'blue',
+    font= ('Calibri', 14, 'bold'),
+    foreground= 'white',
+    anchor= CENTER,
+    width= 10,
+    borderwidth= 2,
+    relief= 'solid'
+)
+
 inicialLabel.grid(row= 0, column= 0)
 leftEntry.grid(row= 1, pady=10, column=0, columnspan= 2)
 equalsLabel.grid(row= 1, column=1)
@@ -135,6 +152,7 @@ entryA.grid(row= 1, pady=10, column=2)
 entryOp.grid(row=1, pady=10, column= 3)
 entryB.grid(row= 1, pady=10, column= 4)
 executeButton.grid(row=2, column= 0)
-incognitoLabel.grid(row= 3, column= 0, pady= 10)
+incognitoLabel.grid(row= 3, pady= 10, column= 0)
+resultLabel.grid(row= 3, pady= 10, column=1)
 
 root.mainloop()     # método de looping: abrir interface
