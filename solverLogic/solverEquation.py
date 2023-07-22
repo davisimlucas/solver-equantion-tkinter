@@ -10,18 +10,17 @@ def checkIncognito(valor):
     try:
         float(valor)
         return False
-    except:
+    except ValueError:
         return True
 
 def solverEquation(equation):
-    
-    parts = [item.equation.split('=') for item in equation]
-    expression = equation[1]
+    parts = equation.split('=') 
+    expression = parts[1]
     validOperators = ['+', '-', '*', '/']
 
     for op in validOperators:
-        value = expression.split(op)
-        if len(value) > 1:
+        values = expression.split(op)
+        if len(values) > 1:
             operators = op
             break
         
@@ -34,29 +33,23 @@ def solverEquation(equation):
     elif checkIncognito(values[0]):
         A = float(leftValue)
         B = float(values[1])
-    elif checkIncognito(value[1]):
+        op = oppositeOperators[op]
+    elif checkIncognito(values[1]):
         if op == '-' or op == '/':
             A = float(values[0])
-            B == float(leftValue)
+            B = float(leftValue)
         elif op == '+' or op == '*':
+            op = oppositeOperators[op]
             A = float(leftValue)
             B = float(values[0])
 
     if op == '+':
-        result = A - B 
-        return result
+        result = A + B 
     elif op == '-':
-        result = A + B
-        return result
+        result = A - B
     elif op == '*':
-        result = A / B 
-        return result
+        result = A * B 
     else: 
-        result = A * B
-        return result
+        result = A / B
 
-    resultText.set(result)
-    print(result)
-
-expression = ['12', '=', 'x', '+', '6']
-solverEquation(expression)
+    return result
