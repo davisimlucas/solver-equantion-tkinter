@@ -6,7 +6,7 @@ from tkinter import *
 my_project =  os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(my_project)
 
-from solverLogic.solverEquation import*
+from controllers.solverController import *
 
 root = Tk()
 root.title('SOLVER EQUATION')   
@@ -21,7 +21,7 @@ posy = heightScreem / 2 - height / 2
 root.geometry('%dx%d+%d+%d' % (width, height, posx, posy))    
 root.resizable(TRUE, TRUE)      
 root.state('iconic')   
-root.iconbitmap('tkinterGraph\images\icon-math.ico')    
+root.iconbitmap('assets\icon-math.ico')    
 
 equationString = StringVar()
 
