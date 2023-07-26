@@ -32,7 +32,7 @@ equationString = StringVar()
 
 def showResult():
     resultString = solverEquation(equationString.get())
-    resultLabel['text'] = f'X = {resultString:.2f}' 
+    resultLabel['text'] = f'X = {resultString}' 
 
 inicialLabel = Label(
     root,
