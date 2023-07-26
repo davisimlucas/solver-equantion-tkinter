@@ -2,6 +2,7 @@ import os
 import sys
 import tkinter as tk
 from tkinter import *
+from PIL import Image, ImageTk
 
 my_project =  os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(my_project)
@@ -20,9 +21,13 @@ posx = widthScreem / 2 - width / 2
 posy = heightScreem / 2 - height / 2
 root.geometry('%dx%d+%d+%d' % (width, height, posx, posy))    
 root.resizable(TRUE, TRUE)      
-root.state('iconic')   
-root.iconbitmap('assets/icon-math.ico')    
-
+'''
+root.state('iconic')  
+iconPath = os.path.join(os.path.dirname(__file__), 'assets/icon-math.ico')
+icon_image = Image.open(iconPath)
+icon_photo = ImageTk.PhotoImage(icon_image)
+root.iconphoto(TRUE, icon_photo)
+'''
 equationString = StringVar()
 
 def showResult():
