@@ -21,7 +21,7 @@ posy = heightScreem / 2 - height / 2
 root.geometry('%dx%d+%d+%d' % (width, height, posx, posy))    
 root.resizable(TRUE, TRUE)      
 root.state('iconic')   
-root.iconbitmap('assets\icon-math.ico')    
+root.iconbitmap('assets/icon-math.ico')    
 
 equationString = StringVar()
 
