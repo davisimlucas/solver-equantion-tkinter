@@ -52,4 +52,8 @@ def solverEquation(equation):
     else: 
         result = A / B
 
-    return result
+    if result == int(result):
+        return int(result)
+    else:
+        return round(result, 3)
+        
